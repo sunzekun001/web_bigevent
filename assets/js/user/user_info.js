@@ -1,5 +1,6 @@
 $(function() {
-    var layar = layuui.layar
+    var form = layui.form
+    var layar = layui.layar
     form.verify({
         nickname: function(value) {
             if (value.length > 6) {
@@ -18,7 +19,9 @@ $(function() {
                 if (res.status !== 0) {
                     return layer.msg('获取用户信息失败！')
                 }
-                layar.msg(res.message)
+                console.log(res);
+                // layar.msg(res.message)
+                form.val('formUserInfo', res.data)
             }
         })
     }
