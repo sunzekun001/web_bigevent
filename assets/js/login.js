@@ -28,6 +28,7 @@ $(function() {
             }
             $.post('/api/reguser', data, function(res) {
                 if (res.status !== 0) {
+                    console.log(res);
                     return layer.msg(res.message)
                 }
                 layer.msg('注册成功，请登录！')
@@ -42,7 +43,7 @@ $(function() {
         $.ajax({
             type: "post",
             url: "/api/login",
-            data: $(this).serialize,
+            data: $(this).serialize(),
 
             success: function(res) {
                 if (res.status !== 0) {

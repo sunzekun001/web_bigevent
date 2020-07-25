@@ -21,13 +21,14 @@ iframe {
 }
 
 a {
-    transform: none;
+    transition: none !important;
 }
 
 .userinfo {
     height: 60px;
     line-height: 60px;
     text-align: center;
+    user-select: none;
 }
 
 .layui-side-scroll .userinfo {
