@@ -1,7 +1,7 @@
 $(function() {
         getUserInfo()
         var layar = layui.layar
-        $('.btnLogout').on('click', function() {
+        $('#btnLogout').on('click', function() {
             layer.confirm('确定退出登录?', { icon: 3, title: '提示' }, function(index) {
                 //do something
                 // 1. 清空本地存储中的 token
@@ -34,8 +34,10 @@ function renderAvatar(user) {
     $('#welcome').html('欢迎&nbsp&nbsp' + name)
         // 按需渲染用户头像
     if (user.user_pic !== null) {
+
         // 渲染图片头像
         $('.layui-nav-img').attr('src', user.user_pic).show()
+
         $('.text-avatar').hide()
     } else {
         // 渲染文本头像
